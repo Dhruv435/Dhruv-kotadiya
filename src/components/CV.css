@@ -1,0 +1,104 @@
+
+
+/* Title Styling */
+.cv-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #384959;
+  margin-bottom: 15px;
+  text-align: left;
+}
+.cv-bg{
+  font-size: 4rem !important; 
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.042) !important; 
+  position: relative; 
+  top: 20%;
+  font-family: cursive !important;
+  right: -65% !important;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none; 
+  white-space: nowrap; 
+  margin-bottom: -10% !important;
+}
+/* Description Styling */
+.cv-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #384959;
+  margin-bottom: 20px;
+  text-align: left;
+  
+}
+
+/* Download Button */
+.download-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #3B373B;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.download-btn:hover {
+  background: #CAD4DF;
+  transform: scale(1.05);
+  color: #3B373B;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cv-container {
+    padding: 0px;
+    margin: 0px;
+    margin-top: 40px;
+  }
+
+  .cv-title {
+    font-size: 24px;
+  }
+
+  .cv-description {
+    font-size: 14px;
+  }
+
+  .download-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .cv-bg {
+    font-size: 3rem !important; 
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.042) !important; 
+    top: 120%;
+    margin-bottom: -20% !important;
+    right: -25% !important;
+  }
+}
+
+/* Dark Mode Support */
+.dark .cv-container {
+  background: #222;
+  color: white;
+}
+
+.dark .cv-title {
+  color: #fff;
+}
+
+.dark .cv-description {
+  color: #ddd;
+}
+
+.dark .download-btn {
+  background: #007BFF;
+}
+
+.dark .download-btn:hover {
+  background: #0056b3;
+}

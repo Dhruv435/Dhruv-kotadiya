@@ -1,0 +1,172 @@
+
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 260px;
+  height: 100vh;
+  background-color: #101927 !important; /* Updated Background Color */
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 4px 0 10px rgba(215, 229, 255, 0.5);
+  z-index: 999;
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* Sidebar Hidden */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    position: absolute;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+}
+
+/* Profile Section */
+.profile {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid white;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1);
+}
+
+.profile h3 {
+  margin: 10px 0 5px;
+  font-size: 20px;
+}
+
+.profile p {
+  font-size: 16px;
+  color: #bbb;
+}
+
+/* Navigation Buttons */
+nav {
+  width: 100%;
+  text-align: center;
+}
+
+nav button {
+  background: #38495900;
+  border: none;
+  color: #DDDBDE;
+  font-size: 18px;
+  margin: 10px 30px;
+  cursor: pointer;
+  width: 80%;
+  padding: 10px;
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s;
+  border-radius: 5px;
+}
+
+nav button:hover {
+  background: #5C6D7A;
+  transform: scale(1.05);
+}
+
+/* Social Links */
+.social-links {
+  margin-top: 170px;
+  display: flex;
+  flex-direction: row; /* Change from column to row */
+  gap: 15px; /* Adjust space between links */
+  justify-content: center; /* Center-align the links */
+  align-items: center;
+  flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  padding: 5px 10px; /* Adds spacing for better clickability */
+}
+
+.social-links a:hover {
+  color: #00aced;
+}
+
+
+/* Hamburger Button (Mobile) */
+.hamburger {
+  position: fixed;
+  text-align: center;
+  top: 0%;
+  background: none;
+  border: none;
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+  transition: color 0.3s ease;
+}
+
+.hamburger:hover {
+  color: #00aced;
+}
+
+.close-btn {
+  display: none;  /* Hides in desktop view */
+  background: none;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 110px;
+  transition: color 0.3s ease;
+}
+.close-btn:hover {
+  color: #00aced;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .sidebar.open .close-btn {
+    display: block;
+  }
+  
+}
+
+
+
+/* Dark Mode Support */
+.dark .sidebar {
+  background-color: #86B6F6;
+}
+
+.dark nav button:hover {
+  background: #333;
+}
+
+.dark .social-links a:hover {
+  color: #1db954;
+}

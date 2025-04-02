@@ -1,0 +1,151 @@
+body {
+  background-color: var(--body-bg, #f0f4f8) ; 
+  margin: 0%;
+  padding: 2%;
+  font-family: "Poppins", sans-serif;
+}
+.hire-button{
+  display: inline-block;
+  padding: 12px 24px;
+  background: #3B373B;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  width: 200px;
+  margin-left:  5px !important;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.about-bg {
+  font-size: 7rem; 
+  font-weight: 600 !important;
+  color: rgba(0, 0, 0, 0.042) !important; 
+  position: absolute; 
+  top: -60%;
+  font-family: cursive !important;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none; 
+  white-space: nowrap; 
+}
+
+.hire-button:hover {
+  background: #CAD4DF;
+  transform: scale(1.05);
+  color: #3B373B;
+}
+.name {
+  font-size: 3rem; /* Relative unit */
+  font-weight: 700;
+  color: var(--name-color, #1a237e); /* Use CSS variable */
+  text-align: left;
+  margin-bottom: 2rem; /* Relative unit */
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.0625rem; /* Relative unit */
+  line-height: 1.2;
+  border-bottom: 0.25rem solid var(--name-border, #101927); /* Use CSS variable */
+  padding-bottom: 1rem; /* Relative unit */
+  display: flex;
+  align-items: center;
+}
+
+.name::after {
+  content: "👋";
+  font-size: 2rem; /* Relative unit */
+  margin-left: 1rem; /* Relative unit */
+  animation: wave 0.8s ease-in-out infinite;
+  transform-origin: bottom center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.name:hover::after {
+  transform: scale(1.15) rotate(12deg);
+}
+
+.description {
+  font-size: 1.25rem; /* Relative unit */
+  line-height: 1.9;
+  color: var(--description-color, #444); /* Use CSS variable */
+  text-align: justify;
+  text-justify: inter-word;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.03125rem; /* Relative unit */
+  word-spacing: 0.0625rem; /* Relative unit */
+}
+
+/* Wave Animation Keyframes */
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-22deg);
+  }
+}
+
+/* Animations */
+.profile-container, .name, .description {
+  opacity: 0;
+  transform: translateY(2.5rem); /* Relative unit */
+  animation: slideUp 0.75s ease-out forwards;
+}
+
+.name { animation-delay: 0.25s; }
+.description { animation-delay: 0.5s; }
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(2.5rem); /* Relative unit */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .name {
+    font-size: 2.125rem; /* Adjusted relative unit */
+    margin-bottom: 1.5625rem; /* Adjusted relative unit */
+  }
+
+  .description {
+    font-size: 1.125rem; /* Adjusted relative unit */
+    line-height: 1.8;
+  }
+  .hire-button {
+    margin-left: 50px !important;
+  }
+
+.about-bg {
+  font-size: 4rem; 
+  color: rgba(0, 0, 0, 0.042) !important; 
+  top: 20%;
+}
+}
+
+/* Dark Mode Support */
+.dark {
+  --body-bg: linear-gradient(135deg, #282828, #333333);
+  --name-color: #81d4fa;
+  --name-border: #81d4fa;
+  --description-color: #d0d0d0;
+}
+
+.profile-container {
+  box-shadow: 0 0.75rem 1.875rem rgba(0, 0, 0, 0.1);
+}
+
+.profile-container:hover {
+  transform: translateY(-0.625rem);
+  box-shadow: 0 1.125rem 2.5rem rgba(0, 0, 0, 0.15);
+}
+
+.dark .profile-container {
+  box-shadow: 0 0.75rem 1.875rem rgba(255, 255, 255, 0.08);
+}
